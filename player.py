@@ -17,13 +17,13 @@ class Player:
 
                 us = player
                 if (card1 in "AKQJ") and (card2 in "AKQJ"):
-                    return player['current_buy_in'] - us[5] + game_state['minimum_raise']
+                    return game_state['current_buy_in'] - us[5] + game_state['minimum_raise']
                 elif card1 in "AKQJ" and card2 == "10":
-                    return player['current_buy_in'] - us[5] + game_state['minimum_raise']
+                    return game_state['current_buy_in'] - us[5] + game_state['minimum_raise']
                 elif card2 in "AKQJ" and card1 == "10":
-                    return player['current_buy_in'] - us[5] + game_state['minimum_raise']
+                    return game_state['current_buy_in'] - us[5] + game_state['minimum_raise']
                 elif card1 == card2:
-                    return player['current_buy_in'] - us[5] + game_state['minimum_raise']
+                    return game_state['current_buy_in'] - us[5] + game_state['minimum_raise']
                 else:
                     return 0
 
