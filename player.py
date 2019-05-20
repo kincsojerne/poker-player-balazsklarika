@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "4.9"
+    VERSION = "5.01"
 
     def betRequest(self, game_state):
         players = game_state["players"]
@@ -12,9 +12,14 @@ class Player:
             if player["id"] == game_state["in_action"]:
                 card1 = player["hole_cards"][0]["rank"]
                 card2 = player["hole_cards"][1]["rank"]
+                card1suit = player["hole_cards"][0]["suit"]
+                card2suit = player["hole_cards"][1]["suit"]
+
                 us = player
-                if (card1 in "AKQJ") and (card2 in "AKQJ"):
+                if (card1 in "AKQJ") and (card2 in "AKQJ") :
                     return player['stack']
+                elif card1suit == card2suit:
+                    return game_state["current_buy_in"] - player["bet"]
                 else:
                     return 0
         '''while len(comm_cards) == 0:
