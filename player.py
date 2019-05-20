@@ -13,8 +13,8 @@ class Player:
                 card1 = player["hole_cards"][0]["rank"]
                 card2 = player["hole_cards"][1]["rank"]
                 us = player
-        if game_state['current_buy_in'] < (us['stack'] * 0.1):
-            return game_state['current_buy_in']
+            if game_state['current_buy_in'] < (player['stack'] * 0.1):
+                return game_state['current_buy_in']
         while len(comm_cards) == 0:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
 
