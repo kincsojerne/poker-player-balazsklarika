@@ -15,7 +15,7 @@ class Player:
         if card1 == card2:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
         else:
-            return 900
+            return us["stack"]
 
     def showdown(self, game_state):
         pass
