@@ -15,6 +15,8 @@ class Player:
                 us = player
             if game_state['current_buy_in'] < (player['stack'] * 0.1):
                 return game_state['current_buy_in']
+            else:
+                return player['stack']
         '''while len(comm_cards) == 0:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
 
