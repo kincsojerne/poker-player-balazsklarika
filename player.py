@@ -13,10 +13,10 @@ class Player:
                 card1 = player["hole_cards"][0]["rank"]
                 card2 = player["hole_cards"][1]["rank"]
                 us = player
-                if game_state['current_buy_in'] < (player['stack'] * 0.1):
-                    return game_state['current_buy_in']
-                elif (card1 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10") and (card2 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10"):
+                if (card1 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10") and (card2 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10"):
                     return player['stack']
+                else:
+                    return 0
         '''while len(comm_cards) == 0:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
 
