@@ -14,7 +14,7 @@ class Player:
                 card2 = player["hole_cards"][1]["rank"]
                 us = player
         for card in comm_cards:
-            if comm_cards[card]["rank"] == card1 or comm_cards[card]["rank"] == card2:
+            if card["rank"] == card1 or card["rank"] == card2:
                 return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
         if card1 == card2:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
