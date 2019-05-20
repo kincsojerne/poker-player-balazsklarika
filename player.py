@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "4.8"
+    VERSION = "4.9"
 
     def betRequest(self, game_state):
         players = game_state["players"]
@@ -15,8 +15,8 @@ class Player:
                 us = player
                 if game_state['current_buy_in'] < (player['stack'] * 0.1):
                     return game_state['current_buy_in']
-            else:
-                return player['stack']
+                elif (card1 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10") and (card2 == "A" or card1 == "K" or card1 == "Q" or card1 == "J" or card1 == "10"):
+                    return player['stack']
         '''while len(comm_cards) == 0:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
 
