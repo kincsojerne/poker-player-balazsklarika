@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "4.5"
+    VERSION = "4.7"
 
     def betRequest(self, game_state):
         players = game_state["players"]
@@ -14,7 +14,7 @@ class Player:
                 card2 = player["hole_cards"][1]["rank"]
                 us = player
         while len(comm_cards) == 0:
-            return 2
+            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
         for card in comm_cards:
             if card["rank"] == card1 or card["rank"] == card2:
                 return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
