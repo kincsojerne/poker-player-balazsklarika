@@ -36,16 +36,6 @@ class Player:
                     return player['stack']
                 else:
                     return 0
-        '''while len(comm_cards) == 0:
-            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
-
-        for card in comm_cards:
-            if card["rank"] == card1 or card["rank"] == card2:
-                return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
-        if card1 == card2:
-            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
-        else:
-            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])'''
 
     def showdown(self, game_state):
         pass
