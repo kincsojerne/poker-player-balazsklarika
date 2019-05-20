@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "4.7"
+    VERSION = "4.8"
 
     def betRequest(self, game_state):
         players = game_state["players"]
@@ -15,7 +15,7 @@ class Player:
                 us = player
             if game_state['current_buy_in'] < (player['stack'] * 0.1):
                 return game_state['current_buy_in']
-        while len(comm_cards) == 0:
+        '''while len(comm_cards) == 0:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
 
         for card in comm_cards:
@@ -24,7 +24,7 @@ class Player:
         if card1 == card2:
             return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
         else:
-            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])
+            return game_state["current_buy_in"] - (us["bet"] + game_state["minimum_raise"])'''
 
     def showdown(self, game_state):
         pass
