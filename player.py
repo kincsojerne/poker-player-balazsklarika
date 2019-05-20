@@ -19,7 +19,12 @@ class Player:
                 if (card1 in "AKQJ") and (card2 in "AKQJ") :
                     return player['stack']
                 elif card1suit == card2suit:
-                    return game_state["current_buy_in"] - player["bet"]
+                    if len(comm_cards) <= 3:
+                        if comm_cards[0]["suit"] == card1suit and comm_cards[1]["suit"] == comm_cards[2]["suit"]:
+                            return player['stack']
+                        return game_state["current_buy_in"] - player["bet"]
+                    else:
+                        return 0
                 elif card1 in "AKQJ" and card2 == "10":
                     return player['stack']
                 elif card2 in "AKQJ" and card1 == "10":
