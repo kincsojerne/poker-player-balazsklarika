@@ -1,6 +1,6 @@
 
 class Player:
-    VERSION = "5.04"
+    VERSION = "5.05beta"
 
     def betRequest(self, game_state):
         players = game_state["players"]
