@@ -19,7 +19,7 @@ class Player:
 
                 for comm_card in comm_cards:
                     if card1 == comm_card['rank'] or card2 == comm_card['rank']:
-                        return players['stack']
+                        return player['stack']
 
 
 
